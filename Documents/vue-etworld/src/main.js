@@ -2,14 +2,16 @@ import Vue from 'vue'
 import VueRouter from './jslib/vue-router'
 import routes from './routes'
 import $ from 'jquery'
-import touch from 'vue-directive-touch'
+import MintUI from 'mint-ui'
+
+import 'mint-ui/lib/style.css'
 
 window.$ = $
 
-require('./jslib/UIAdapter')
+require('./jslib/UIAdapter');
 
 Vue.use(VueRouter);
-Vue.use(touch);
+Vue.use(MintUI);
 
 const router = new VueRouter({
     routes

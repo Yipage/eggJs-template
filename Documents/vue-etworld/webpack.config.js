@@ -29,9 +29,12 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
+            // {
+            //     test: /\.css$/,
+            //     use: [  'css-loader' ]
+            // },
             {
-                test: /\.css$/,
-                use: [  'css-loader' ]
+                test: /\.css$/, loader: 'style-loader!css-loader',
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
