@@ -5,6 +5,7 @@
             <span class="user_moblie">13499380000</span>
             <div style="clear: both"></div>
             <p class="user_site">广东省深圳市龙岗区龙城街道花样年龙年广场13a01</p>
+            <i class="set" @click="onSet()"></i>
         </div>
 
         <div class="main">
@@ -13,29 +14,45 @@
                 <span class="user_moblie2">13499380000</span>
                 <div style="clear: both"></div>
                 <p class="user_site2">广东省深圳市龙岗区龙城街道花样年龙年广场13a01</p>
+                <i class="set" @click="onSet()"></i>
             </div>
             <div class="site2">
                 <span class="user_name2">算什么男人</span>
                 <span class="user_moblie2">13499380000</span>
                 <div style="clear: both"></div>
                 <p class="user_site2">广东省深圳市龙岗区龙城街道花样年龙年广场13a01</p>
+                <i class="set" @click="onSet()"></i>
             </div>
             <div class="site2">
                 <span class="user_name2">算什么男人</span>
                 <span class="user_moblie2">13499380000</span>
                 <div style="clear: both"></div>
                 <p class="user_site2">广东省深圳市龙岗区龙城街道花样年龙年广场13a01</p>
+                <i class="set" @click="onSet()"></i>
             </div>
         </div>
 
-        <div class="footer">新建地址</div>
+        <div class="footer" @click="onAdd()">新建地址</div>
     </div>
 </template>
 
 <script>
+    import {setTitle} from '../../../assets/js/setTittle'
+
     export default {
         data() {
             return {}
+        },
+        methods: {
+            onAdd() {
+                this.$router.push({path: '/addsite'})
+            },
+            onSet() {
+                this.$router.push({path: '/setsite'})
+            }
+        },
+        mounted() {
+            setTitle("收货地址")
         }
     }
 </script>
@@ -45,6 +62,7 @@
         width: 100%;
         height: 1.56rem;
         background: rgba(255, 255, 255, 1);
+        position: relative;
     }
 
     .site .user_name {
@@ -87,19 +105,19 @@
         position: absolute;
         width: 0.30rem;
         height: 0.30rem;
-        background: rgba(57, 177, 254, 1);
+        background: url("../../../assets/img/ic_location.png") no-repeat;
+        background-size: 100%;
         top: 0;
         left: -0.5rem;
     }
 
-    .site .user_site::before {
-        content: '';
+    .set {
         position: absolute;
         width: 0.30rem;
         height: 0.30rem;
         background: url("../../../assets/img/ic_bianji.png") no-repeat;
         background-size: 100%;
-        top: 0;
+        bottom: 0.3rem;
         right: 0.5rem;
     }
 
@@ -111,6 +129,7 @@
         width: 100%;
         height: 1.56rem;
         background: rgba(255, 255, 255, 1);
+        position: relative;
     }
 
     .site2 .user_name2 {
@@ -146,17 +165,6 @@
         line-height: 0.33rem;
         margin: 0.22rem 0 0 0.23rem;
         position: relative;
-    }
-
-    .site2 .user_site2::before {
-        content: '';
-        position: absolute;
-        width: 0.30rem;
-        height: 0.30rem;
-        background: url("../../../assets/img/ic_bianji.png") no-repeat;
-        background-size: 100%;
-        top: 0;
-        right: 0.5rem;
     }
 
     .footer {

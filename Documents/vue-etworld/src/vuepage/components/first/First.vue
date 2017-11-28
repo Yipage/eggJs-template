@@ -11,7 +11,7 @@
                 <ul class="nav" v-if="isShow">
                     <li class="line" @click.stop="onSearch()">搜索</li>
                     <li class="line" @click.stop="onClass()">分类</li>
-                    <li class="line">个人中心</li>
+                    <li class="line" @click.stop="onPersonal()">个人中心</li>
                     <li class="line">购物车</li>
                 </ul>
             </transition>
@@ -55,6 +55,9 @@
             onClass() {
                 this.$router.push({path: '/classify'})
             },
+            onPersonal() {
+                this.$router.push({path: '/personal'})
+            }
         },
         mounted() {
             let that = this;

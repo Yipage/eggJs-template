@@ -18,7 +18,7 @@
         </div>
 
         <div class="coupon">
-            <p class="coupon_name">优惠券</p>
+            <p class="coupon_name" @click="onCoupon()">优惠券</p>
             <p class="ji">积分 共1999积分，可用1000积分，抵¥10.00
                 <i class="i_1"></i>
             </p>
@@ -55,6 +55,9 @@
         methods: {
             onGo() {
                 this.$router.push({path: '/site'})
+            },
+            onCoupon() {
+                this.$router.push({path: '/coupon'})
             }
         },
         mounted() {
@@ -110,7 +113,8 @@
         position: absolute;
         width: 0.30rem;
         height: 0.30rem;
-        background: rgba(57, 177, 254, 1);
+        background:url("../../../assets/img/ic_location.png") no-repeat;
+        background-size: 100%;
         top: 0;
         left: -0.5rem;
     }

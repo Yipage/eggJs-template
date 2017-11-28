@@ -5,6 +5,10 @@ import classify from './vuepage/components/classify/Classify.vue'
 import details from './vuepage/components/classify/Details.vue'
 import order from './vuepage/components/classify/Order.vue'
 import site from './vuepage/components/classify/Site.vue'
+import addsite from './vuepage/components/classify/AddSite.vue'
+import coupon from './vuepage/components/classify/Coupon.vue'
+import personal from './vuepage/components/personal/Personal.vue'
+import setsite from './vuepage/components/classify/SetSite.vue'
 
 const routes = [
     {
@@ -37,8 +41,25 @@ const routes = [
             {
                 path: '/site',
                 component: site
+            },
+            {
+                path: '/addsite',
+                component: addsite
+            },
+            {
+                path: '/coupon',
+                component: coupon
+            },
+            {
+                path: '/personal',
+                component: personal
+            },
+            {
+                path: '/setsite',
+                component: setsite
             }
         ]
     }
-]
+];
+
 export default routes;

@@ -12,23 +12,33 @@
             <div class="introduce">
                 <p>ET.BABY 存储器</p>
                 <p>￥25</p>
-                <i></i>
+                <i @click="onBuy()"></i>
             </div>
         </div>
+        <stop v-if="isShade"></stop>
     </div>
 </template>
 
 <script>
     import {setTitle} from "../../../assets/js/setTittle"
+    import stop from '../classify/Stop.vue'
 
     export default {
         data() {
-            return {}
+            return {
+                isShade: false
+            }
+        },
+        components: {
+            stop
         },
         methods: {
             onGo() {
                 this.$router.push({path: '/details'})
             },
+            onBuy() {
+                this.isShade = true
+            }
         },
         mounted() {
             setTitle("搜索")

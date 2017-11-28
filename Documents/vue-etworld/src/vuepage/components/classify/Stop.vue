@@ -62,7 +62,8 @@
             onHide() {
                 this.$parent.isShade = false;
             },
-            onStop() {},
+            onStop() {
+            },
             onBuy() {
                 this.$router.push({path: '/order'})
             }
@@ -146,27 +147,30 @@
 
     .shade .float .input_num .minus {
         position: absolute;
-        width: 0.40rem;
-        height: 0.40rem;
-        background: rgba(253, 149, 187, 1);
+        width: 0.60rem;
+        height: 0.60rem;
+        background: url("../../../assets/img/ic_jian.png") no-repeat;
+        background-size: 100%;
         border-radius: 0.10rem;
-        top: 0.05rem;
+        top: 0;
         left: -1.2rem;
     }
 
     .shade .float .input_num .add {
         position: absolute;
-        width: 0.40rem;
-        height: 0.40rem;
-        background: rgba(253, 149, 187, 1);
+        width: 0.60rem;
+        height: 0.60rem;
+        background: url("../../../assets/img/ic_jia.png") no-repeat;
+        background-size: 100%;
         border-radius: 0.10rem;
-        top: 0.05rem;
+        top: 0;
         left: 1.2rem;
     }
 
     .shade .float .input_num input {
         width: 0.5rem;
         height: 0.45rem;
+        text-align: center;
     }
 
     .pre {
