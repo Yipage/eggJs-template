@@ -9,6 +9,15 @@ import addsite from './vuepage/components/classify/AddSite.vue'
 import coupon from './vuepage/components/classify/Coupon.vue'
 import personal from './vuepage/components/personal/Personal.vue'
 import setsite from './vuepage/components/classify/SetSite.vue'
+import myorder from './vuepage/components/personal/MyOrder.vue'
+import indent from './vuepage/components/personal/Indent.vue'
+import remark from './vuepage/components/personal/Remark.vue'
+import after from './vuepage/components/personal/After.vue'
+import integral from './vuepage/components/personal/Integral.vue'
+import friend from './vuepage/components/personal/Friend.vue'
+import wallet from './vuepage/components/personal/Wallet.vue'
+import setpw from './vuepage/components/personal/Setpw.vue'
+import remember from './vuepage/components/personal/Remember.vue'
 
 const routes = [
     {
@@ -57,6 +66,42 @@ const routes = [
             {
                 path: '/setsite',
                 component: setsite
+            },
+            {
+                path: '/myorder',
+                component: myorder
+            },
+            {
+                path: '/indent',
+                component: indent
+            },
+            {
+                path: '/remark',
+                component: remark
+            },
+            {
+                path: '/after',
+                component: after
+            },
+            {
+                path: '/integral',
+                component: integral
+            },
+            {
+                path: '/friend',
+                component: friend
+            },
+            {
+                path: '/wallet',
+                component: wallet
+            },
+            {
+                path: '/setpw',
+                component: setpw
+            },
+            {
+                path: '/remember',
+                component: remember
             }
         ]
     }

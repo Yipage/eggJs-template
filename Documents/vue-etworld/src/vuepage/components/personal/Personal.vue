@@ -7,12 +7,12 @@
 
         <div class="main">
             <div class="order">
-                <p class="myorder">我的订单</p>
+                <p class="myorder" @click="onOrder()">我的订单</p>
                 <ul class="tag">
-                    <li class="dan1">待付款<span class="color">(0)</span></li>
-                    <li class="dan2">待发货<span class="color">(0)</span></li>
-                    <li class="dan3">待收货<span class="color">(0)</span></li>
-                    <li class="dan4">待评价<span class="color">(0)</span></li>
+                    <li class="dan1" @click="onTag(2)">待付款<span class="color">(0)</span></li>
+                    <li class="dan2" @click="onTag(3)">待发货<span class="color">(0)</span></li>
+                    <li class="dan3" @click="onTag(4)">待收货<span class="color">(0)</span></li>
+                    <li class="dan4" @click="onTag(5)">待评价<span class="color">(0)</span></li>
                     <li class="dan5">退款/售后</li>
                 </ul>
             </div>
@@ -20,12 +20,12 @@
 
         <div class="footer">
             <div class="limit">
-                <p class="my1">我的钱包</p>
-                <p class="my2">收货地址</p>
-                <p class="my3">优 惠 券</p>
-                <p class="my4">我的积分</p>
-                <p class="my5">钱包支付密码</p>
-                <p class="my6">邀请好友</p>
+                <p class="my1" @click="onWallet()">我的钱包</p>
+                <p class="my2" @click="onSite()">收货地址</p>
+                <p class="my3" @click="onCoupon()">优 惠 券</p>
+                <p class="my4" @click="onIntegral()">我的积分</p>
+                <p class="my5" @click="onSetpw()">钱包支付密码</p>
+                <p class="my6" @click="onFriend()">邀请好友</p>
                 <p class="my7">关于外星世界</p>
             </div>
         </div>
@@ -33,9 +33,53 @@
 </template>
 
 <script>
+    import {setTitle} from "../../../assets/js/setTittle"
+
     export default {
         data() {
             return {}
+        },
+        methods: {
+            onOrder() {
+                this.$router.push({path: '/myorder'})
+            },
+            onTag(index) {
+                switch (index) {
+                    case 2:
+                        this.$router.push({path: '/myorder', query: {tab: 2}});
+                        break;
+                    case 3:
+                        this.$router.push({path: '/myorder', query: {tab: 3}});
+                        break;
+                    case 4:
+                        this.$router.push({path: '/myorder', query: {tab: 4}});
+                        break;
+                    case 5:
+                        this.$router.push({path: '/myorder', query: {tab: 5}});
+                        break;
+                }
+            },
+            onIntegral() {
+                this.$router.push({path: '/integral'})
+            },
+            onFriend() {
+                this.$router.push({path: '/friend'})
+            },
+            onWallet() {
+                this.$router.push({path: '/wallet'})
+            },
+            onSite() {
+                this.$router.push({path: '/site'})
+            },
+            onCoupon() {
+                this.$router.push({path: '/coupon'})
+            },
+            onSetpw() {
+                this.$router.push({path: '/setpw'})
+            }
+        },
+        mounted() {
+            setTitle("个人中心")
         }
     }
 </script>
@@ -207,12 +251,78 @@
         right: 0;
     }
 
-    .footer .limit > p::after {
+    .my1::after {
         content: '';
         position: absolute;
         width: 0.32rem;
         height: 0.32rem;
-        background: url("../../../assets/img/ic_daifukuan.png") no-repeat;
+        background: url("../../../assets/img/ic_mymoney2.png") no-repeat;
+        background-size: 100%;
+        top: 0.29rem;
+        left: 0;
+    }
+
+    .my2::after {
+        content: '';
+        position: absolute;
+        width: 0.32rem;
+        height: 0.32rem;
+        background: url("../../../assets/img/ic_address.png") no-repeat;
+        background-size: 100%;
+        top: 0.29rem;
+        left: 0;
+    }
+
+    .my3::after {
+        content: '';
+        position: absolute;
+        width: 0.32rem;
+        height: 0.32rem;
+        background: url("../../../assets/img/ic_youhuiquan.png") no-repeat;
+        background-size: 100%;
+        top: 0.29rem;
+        left: 0;
+    }
+
+    .my4::after {
+        content: '';
+        position: absolute;
+        width: 0.32rem;
+        height: 0.32rem;
+        background: url("../../../assets/img/ic_jifen.png") no-repeat;
+        background-size: 100%;
+        top: 0.29rem;
+        left: 0;
+    }
+
+    .my5::after {
+        content: '';
+        position: absolute;
+        width: 0.32rem;
+        height: 0.32rem;
+        background: url("../../../assets/img/ic_xiugaipassword.png") no-repeat;
+        background-size: 100%;
+        top: 0.29rem;
+        left: 0;
+    }
+
+    .my6::after {
+        content: '';
+        position: absolute;
+        width: 0.32rem;
+        height: 0.32rem;
+        background: url("../../../assets/img/ic_friend.png") no-repeat;
+        background-size: 100%;
+        top: 0.29rem;
+        left: 0;
+    }
+
+    .my7::after {
+        content: '';
+        position: absolute;
+        width: 0.32rem;
+        height: 0.32rem;
+        background: url("../../../assets/img/ic_mine.png") no-repeat;
         background-size: 100%;
         top: 0.29rem;
         left: 0;
