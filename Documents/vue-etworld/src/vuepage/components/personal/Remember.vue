@@ -15,7 +15,7 @@
                 <span class="guangbiao" style="left:0;"></span>
             </div>
         </div>
-        <p class="button">确定</p>
+        <p class="button" @click="onSet()">确定</p>
     </div>
 </template>
 
@@ -25,6 +25,11 @@
     export default {
         data() {
             return {}
+        },
+        methods: {
+            onSet() {
+                this.$router.push({path: '/setpaypw'})
+            }
         },
         mounted() {
             setTitle("设置支付密码");
@@ -135,11 +140,11 @@
         border-left: 0;
     }
 
-    .alieditContainer .sixDigitPassword i.active {
-        background-image: url("https://t.alipayobjects.com/images/rmsweb/T1nYJhXalXXXXXXXXX.gif");
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
+    /*.alieditContainer .sixDigitPassword i.active {*/
+    /*background-image: url("https://t.alipayobjects.com/images/rmsweb/T1nYJhXalXXXXXXXXX.gif");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center;*/
+    /*}*/
 
     .alieditContainer .sixDigitPassword b {
         display: block;
@@ -147,7 +152,7 @@
         width: 7px;
         height: 7px;
         overflow: hidden;
-        display: none; /*visibility:hidden;*/
+        display: none;
         background: #000;
         border-radius: 100%;
     }
@@ -160,7 +165,6 @@
         left: 0px;
         top: -1px;
         border: 1px solid rgba(82, 168, 236, .8);
-        border: 1px solid #00ffff \9;
         border-radius: 5px;
         visibility: visible;
         -webkit-box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.75), 0 0 8px rgba(82, 168, 236, 0.6);

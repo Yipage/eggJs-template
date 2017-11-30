@@ -16,7 +16,7 @@
         },
         methods: {
             onForget() {
-
+                this.$router.push({path: '/setmobile'})
             },
             onRemember() {
                 this.$router.push({path: '/remember'})

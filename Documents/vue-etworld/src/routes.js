@@ -18,6 +18,8 @@ import friend from './vuepage/components/personal/Friend.vue'
 import wallet from './vuepage/components/personal/Wallet.vue'
 import setpw from './vuepage/components/personal/Setpw.vue'
 import remember from './vuepage/components/personal/Remember.vue'
+import setpaypw from './vuepage/components/personal/SetPaypw.vue'
+import setmobile from './vuepage/components/personal/SetMobile.vue'
 
 const routes = [
     {
@@ -102,6 +104,14 @@ const routes = [
             {
                 path: '/remember',
                 component: remember
+            },
+            {
+                path: '/setpaypw',
+                component: setpaypw
+            },
+            {
+                path: '/setmobile',
+                component: setmobile
             }
         ]
     }
