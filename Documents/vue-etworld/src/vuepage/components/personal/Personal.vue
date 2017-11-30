@@ -13,7 +13,7 @@
                     <li class="dan2" @click="onTag(3)">待发货<span class="color">(0)</span></li>
                     <li class="dan3" @click="onTag(4)">待收货<span class="color">(0)</span></li>
                     <li class="dan4" @click="onTag(5)">待评价<span class="color">(0)</span></li>
-                    <li class="dan5">退款/售后</li>
+                    <li class="dan5" @click="onSale()">退款/售后</li>
                 </ul>
             </div>
         </div>
@@ -58,6 +58,9 @@
                         this.$router.push({path: '/myorder', query: {tab: 5}});
                         break;
                 }
+            },
+            onSale(){
+                this.$router.push({path: '/sale'})
             },
             onIntegral() {
                 this.$router.push({path: '/integral'})

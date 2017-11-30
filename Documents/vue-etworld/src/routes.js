@@ -20,6 +20,8 @@ import setpw from './vuepage/components/personal/Setpw.vue'
 import remember from './vuepage/components/personal/Remember.vue'
 import setpaypw from './vuepage/components/personal/SetPaypw.vue'
 import setmobile from './vuepage/components/personal/SetMobile.vue'
+import sale from './vuepage/components/personal/Sale.vue'
+import saledetail from './vuepage/components/personal/SaleDetail.vue'
 
 const routes = [
     {
@@ -112,6 +114,14 @@ const routes = [
             {
                 path: '/setmobile',
                 component: setmobile
+            },
+            {
+                path: '/sale',
+                component: sale
+            },
+            {
+                path: '/saledetail',
+                component: saledetail
             }
         ]
     }
