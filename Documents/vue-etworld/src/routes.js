@@ -22,6 +22,8 @@ import setpaypw from './vuepage/components/personal/SetPaypw.vue'
 import setmobile from './vuepage/components/personal/SetMobile.vue'
 import sale from './vuepage/components/personal/Sale.vue'
 import saledetail from './vuepage/components/personal/SaleDetail.vue'
+import shopping from './vuepage/components/shopping/Shopping.vue'
+import setshop from './vuepage/components/shopping/SetShop.vue'
 
 const routes = [
     {
@@ -122,6 +124,14 @@ const routes = [
             {
                 path: '/saledetail',
                 component: saledetail
+            },
+            {
+                path: '/shopping',
+                component: shopping
+            },
+            {
+                path: '/setshop',
+                component: setshop
             }
         ]
     }

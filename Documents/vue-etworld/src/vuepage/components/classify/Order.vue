@@ -1,5 +1,8 @@
 <template>
     <div>
+        <payment v-if="isShow"></payment>
+        <paytype v-if="isType"></paytype>
+
         <div class="site" @click="onGo()">
             <span class="user_name">算什么男人</span>
             <span class="user_moblie">13499380000</span>
@@ -40,17 +43,26 @@
             <p>共 1 件商品</p>
             <p>实付款：¥</p>
             <p>88.8</p>
-            <p>立即支付</p>
+            <p @click="onPay()">立即支付</p>
         </div>
     </div>
 </template>
 
 <script>
     import {setTitle} from '../../../assets/js/setTittle'
+    import payment from '../personal/Payment.vue'
+    import paytype from '../personal/PayType.vue'
 
     export default {
         data() {
-            return {}
+            return {
+                isShow: false,
+                isType: false,
+            }
+        },
+        components: {
+            payment,
+            paytype
         },
         methods: {
             onGo() {
@@ -58,6 +70,9 @@
             },
             onCoupon() {
                 this.$router.push({path: '/coupon'})
+            },
+            onPay(){
+                this.isShow = true
             }
         },
         mounted() {

@@ -60,6 +60,7 @@
         right: 0;
         bottom: 0;
         background: rgba(18, 18, 18, 0.6);
+        z-index: 200;
     }
 
     .main {

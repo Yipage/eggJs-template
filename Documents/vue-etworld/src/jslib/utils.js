@@ -1,9 +1,9 @@
 module.exports = {
     host: "http://mobile.yueso.top/",
-    getToken(){
+    getToken() {
         return this.getCookie('ys_token')
     },
-    timeStamp2Date(timestamp){
+    timeStamp2Date(timestamp) {
         var date = new Date(timestamp);
         console.log(timestamp)
         var month = date.getMonth(),
@@ -11,7 +11,7 @@ module.exports = {
         return month + '-' + day
     },
 
-    subDateString(date){
+    subDateString(date) {
         return new String(date).substring(5, 10)
     },
     isEmptyObject(e) {
@@ -20,13 +20,13 @@ module.exports = {
             return !1;
         return !0
     },
-    setCookie(name, value){
+    setCookie(name, value) {
         var Days = 14;
         var exp = new Date();
         exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
         document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
     },
-    getCookie(name){
+    getCookie(name) {
         var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
         if (arr = document.cookie.match(reg))
             return unescape(arr[2]);

@@ -1,5 +1,5 @@
 /**
- * Created by IvanCai on 2017/5/16.
+ * Created by Padipata on 2017/5/16.
  */
 
 import HttpRequest from '../jslib/HttpRequest'
@@ -15,11 +15,11 @@ const updateUserInfo = (jsonParam) => {
 }
 
 // this is example3,using post request with x-www-form-urlencoded
-const getUserInfo = (name,age) => {
+const getUserInfo = (name, age) => {
     return HttpRequest({
         url: '/api/getUserInfo',
         method: 'post',
-        data: "name="+name+"&age="+age
+        data: "name=" + name + "&age=" + age
     })
 }
 

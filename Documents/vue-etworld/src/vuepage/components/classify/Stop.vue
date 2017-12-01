@@ -171,6 +171,8 @@
         width: 0.5rem;
         height: 0.45rem;
         text-align: center;
+        background-color: #ffffff;
+        border: none;
     }
 
     .pre {

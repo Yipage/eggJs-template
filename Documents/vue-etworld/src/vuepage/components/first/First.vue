@@ -12,7 +12,7 @@
                     <li class="line" @click.stop="onSearch()">搜索</li>
                     <li class="line" @click.stop="onClass()">分类</li>
                     <li class="line" @click.stop="onPersonal()">个人中心</li>
-                    <li class="line">购物车</li>
+                    <li class="line" @click.stop="onShopping()">购物车</li>
                 </ul>
             </transition>
         </section>
@@ -57,6 +57,9 @@
             },
             onPersonal() {
                 this.$router.push({path: '/personal'})
+            },
+            onShopping() {
+                this.$router.push({path: '/shopping'})
             }
         },
         mounted() {

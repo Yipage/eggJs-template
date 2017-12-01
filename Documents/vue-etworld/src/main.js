@@ -8,7 +8,7 @@ import './assets/js/LArea.min'
 import 'mint-ui/lib/style.css'
 import './assets/css/LArea.min.css'
 
-window.$ = $
+window.$ = $;
 
 require('./jslib/UIAdapter');
 
