@@ -285,6 +285,7 @@
                     font-family: PingFangSC-Medium
                     background-color: #ffffff
                     border: none
+                    margin-top: 0.07rem;
             .del
                 width: 0.30rem
                 height: 0.30rem
