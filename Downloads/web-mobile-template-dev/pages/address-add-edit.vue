@@ -137,10 +137,10 @@
     <div class="text1">设为默认地址
       <p class="tishi">注：每次下单时会使用该地址</p>
       <div class="page-part page-switch-padding">
-        <mt-switch v-model="value1" @change="event().handleChange"></mt-switch>
+        <mt-switch v-model="value1" @change="handleChange"></mt-switch>
       </div>
     </div>
-    <div class="footer" @click="onSave()">保存</div>
+    <div class="footer" @click="event().onSave()">保存</div>
 
   </div>
 </template>
@@ -177,6 +177,11 @@
       area1.value = [1, 13, 3];//控制初始位置，注意：该方法并不会影响到input的value
     },
     methods: {
+      handleChange(event) {
+        console.log(event);
+        event ? this.is_default = 0 : this.is_default = 1;
+        console.log(this.is_default, 'is_default')
+      },
       event() {
         let self = this
         return {
@@ -184,11 +189,15 @@
             console.log('获得焦点');
             document.activeElement.blur();//屏蔽默认键盘弹出；
           },
-          handleChange(event) {
-            console.log(event);
-            event ? this.is_default = 0 : this.is_default = 1;
-            console.log(this.is_default, 'is_default')
-          },
+          onSave() {
+            console.log(self.username, 'username')
+            console.log(self.phone, 'phone')
+            console.log(self.province, 'province')
+            console.log(self.city, 'city')
+            console.log(self.county, 'county')
+            console.log(self.detail, 'detail')
+            console.log(self.is_default, 'is_default')
+          }
         }
       },
       network() {
@@ -198,8 +207,8 @@
            * 新增地址
            * @returns {Promise.<void>}
            */
-          async addSite(info){
-            let {data,status} = await getAddAddress(info);
+          async addSite(info) {
+            let {data, status} = await getAddAddress(info);
           }
         }
       },
