@@ -182,7 +182,7 @@
         event ? this.is_default = 0 : this.is_default = 1;
         console.log(this.is_default, 'is_default')
       },
-      event() { 
+      event() {
         let self = this
         return {
           onVal() {
